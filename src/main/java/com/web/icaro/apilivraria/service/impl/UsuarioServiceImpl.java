@@ -29,8 +29,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 
-
-	
 	@Autowired
 	private UsuarioMapper mapper;
 
@@ -126,7 +124,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 			usuarioDTO.setId(usuario.getId());
 			usuarioDTO.setNome(usuario.getNome());
 			usuarioDTO.setEmail(usuario.getEmail());
-			//.perfil(usuario.getPerfil().getId())
 
 		}
 

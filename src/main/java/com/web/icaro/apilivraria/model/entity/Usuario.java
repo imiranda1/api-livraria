@@ -23,10 +23,6 @@ public class Usuario implements UserDetails{
 	private String password;
 	private String nome;
 	private String email;
-	//@ManyToOne
-	//@JoinColumn
-	//private Perfil perfil;
-
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,8 +1,6 @@
 package com.web.icaro.apilivraria.controller;
 
-import com.web.icaro.apilivraria.model.entity.Livro;
 import com.web.icaro.apilivraria.service.BaseService;
-import com.web.icaro.apilivraria.service.LivroService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +9,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -35,10 +32,9 @@ public abstract class BaseController<T,S extends BaseService<T>>{
             return ResponseEntity.ok(service.buscarUm(id));
 
         }catch(EntityNotFoundException ex) {
-
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-        }catch(Exception ex) {
 
+        }catch(Exception ex) {
             log.error(ex.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
